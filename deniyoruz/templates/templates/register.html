@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="static/css/register.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .login-box {
+        background: #fff;
+        padding: 40px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 350px;
+        text-align: center;
+        position: relative;
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #7c0404;
+    }
+    
+    .textbox {
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .textbox input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+    }
+    
+    .textbox input:focus {
+        border-color: red;
+        background-color: #fff;
+        outline: none;
+    }
+    
+    .textbox label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 14px;
+        transition: 0.3s ease;
+    }
+    
+    .textbox input:focus + label,
+    .textbox input:not(:placeholder-shown) + label {
+        top: 0;
+        font-size: 12px;
+        color: red;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: red;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #7c0404;
+    }
+    
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        color: red;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+    
+    img {
+            width: 120px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+            </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="https://iste.edu.tr/files/dikey_logo.png" alt="yazı" style="width:120px;height:80px;" >
+            <h2>Kayıt Ol</h2>
+            <form method="POST" action="/register">
+                <div class="textbox">
+                    <input type="text" id="Student_number" name="Student_number" required>
+                    <label for="Student_number">Öğrenci Numarası</label>
+                </div>
+                <div class="textbox">
+                    <input type="password" id="Password" name="Password" required>
+                    <label for="Password">Şifre</label>
+                </div>
+                <div class="textbox">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Ad Soyad</label>
+                </div>
+                <button type="submit" class="btn">Kayıt Ol</button>
+            </form>
+            <p>Zaten üyeliğiniz var mı? <a href="/">Giriş Yapın</a></p>
+            <p>{{ msg }}</p>
+        </div>
+    </div>
+</body>
+</html>

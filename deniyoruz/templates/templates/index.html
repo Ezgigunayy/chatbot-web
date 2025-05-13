@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container .form-group {
+            margin-bottom: 15px;
+        }
+        .login-container .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .login-container .msg {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .login-container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Giriş Yap</h2>
+    
+    {% if msg %}
+        <div class="msg">{{ msg }}</div>
+    {% endif %}
+    
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label for="Student_number">Öğrenci Numarası</label>
+            <input type="text" class="form-control" id="Student_number" name="Student_number" required>
+        </div>
+        <div class="form-group">
+            <label for="Password">Şifre</label>
+            <input type="password" class="form-control" id="Password" name="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Giriş Yap</button>
+    </form>
+
+    <a href="/register">Hesabınız yok mu? Kayıt Olun</a>
+    <a href="/reset_password">Şifrenizi mi unuttunuz?</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
